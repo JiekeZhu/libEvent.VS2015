@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/libEvent/v14
+/libEvent/x64/Debug
+/libEventSample/x64/Debug
+/x64/Debug
+/libEvent.VC.db
