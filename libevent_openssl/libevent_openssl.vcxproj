@@ -19,11 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{B67502DE-D5F3-4C33-9E89-31A5DF63770E}</ProjectGuid>
+    <ProjectGuid>{EC0A06F3-7FFD-40F6-B64F-EC6C8616A7EB}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>libevent</RootNamespace>
+    <RootNamespace>libevent_openssl</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
-    <ProjectName>libevent</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -73,14 +72,13 @@
   <PropertyGroup />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>EVENT__HAVE_OPENSSL;_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\libevent-2.1.8-stable;$(ProjectDir)..\libevent-2.1.8-stable\include;$(ProjectDir)..\libevent-2.1.8-stable\compat;$(ProjectDir)..\libevent-2.1.8-stable\WIN32-Code\nmake;$(ProjectDir)..\openssl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <DisableSpecificWarnings>
-      </DisableSpecificWarnings>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -93,7 +91,7 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>EVENT__HAVE_OPENSSL;_CRT_SECURE_NO_WARNINGS;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\libevent-2.1.8-stable;$(ProjectDir)..\libevent-2.1.8-stable\include;$(ProjectDir)..\libevent-2.1.8-stable\compat;$(ProjectDir)..\libevent-2.1.8-stable\WIN32-Code\nmake;$(ProjectDir)..\openssl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -105,15 +103,14 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>EVENT__HAVE_OPENSSL;_CRT_SECURE_NO_WARNINGS;WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\libevent-2.1.8-stable;$(ProjectDir)..\libevent-2.1.8-stable\include;$(ProjectDir)..\libevent-2.1.8-stable\compat;$(ProjectDir)..\libevent-2.1.8-stable\WIN32-Code\nmake;$(ProjectDir)..\openssl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <DisableSpecificWarnings>
-      </DisableSpecificWarnings>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -130,7 +127,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>EVENT__HAVE_OPENSSL;_CRT_SECURE_NO_WARNINGS;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\libevent-2.1.8-stable;$(ProjectDir)..\libevent-2.1.8-stable\include;$(ProjectDir)..\libevent-2.1.8-stable\compat;$(ProjectDir)..\libevent-2.1.8-stable\WIN32-Code\nmake;$(ProjectDir)..\openssl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
@@ -145,63 +142,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\libevent-2.1.8-stable\include\evdns.h" />
-    <ClInclude Include="..\libevent-2.1.8-stable\include\event.h" />
-    <ClInclude Include="..\libevent-2.1.8-stable\include\event2\buffer.h" />
-    <ClInclude Include="..\libevent-2.1.8-stable\include\event2\bufferevent.h" />
-    <ClInclude Include="..\libevent-2.1.8-stable\include\event2\bufferevent_compat.h" />
-    <ClInclude Include="..\libevent-2.1.8-stable\include\event2\bufferevent_ssl.h" />
-    <ClInclude Include="..\libevent-2.1.8-stable\include\event2\bufferevent_struct.h" />
-    <ClInclude Include="..\libevent-2.1.8-stable\include\event2\buffer_compat.h" />
-    <ClInclude Include="..\libevent-2.1.8-stable\include\event2\dns.h" />
-    <ClInclude Include="..\libevent-2.1.8-stable\include\event2\dns_compat.h" />
-    <ClInclude Include="..\libevent-2.1.8-stable\include\event2\dns_struct.h" />
-    <ClInclude Include="..\libevent-2.1.8-stable\include\event2\event.h" />
-    <ClInclude Include="..\libevent-2.1.8-stable\include\event2\event_compat.h" />
-    <ClInclude Include="..\libevent-2.1.8-stable\include\event2\event_struct.h" />
-    <ClInclude Include="..\libevent-2.1.8-stable\include\event2\http.h" />
-    <ClInclude Include="..\libevent-2.1.8-stable\include\event2\http_compat.h" />
-    <ClInclude Include="..\libevent-2.1.8-stable\include\event2\http_struct.h" />
-    <ClInclude Include="..\libevent-2.1.8-stable\include\event2\keyvalq_struct.h" />
-    <ClInclude Include="..\libevent-2.1.8-stable\include\event2\listener.h" />
-    <ClInclude Include="..\libevent-2.1.8-stable\include\event2\rpc.h" />
-    <ClInclude Include="..\libevent-2.1.8-stable\include\event2\rpc_compat.h" />
-    <ClInclude Include="..\libevent-2.1.8-stable\include\event2\rpc_struct.h" />
-    <ClInclude Include="..\libevent-2.1.8-stable\include\event2\tag.h" />
-    <ClInclude Include="..\libevent-2.1.8-stable\include\event2\tag_compat.h" />
-    <ClInclude Include="..\libevent-2.1.8-stable\include\event2\thread.h" />
-    <ClInclude Include="..\libevent-2.1.8-stable\include\event2\util.h" />
-    <ClInclude Include="..\libevent-2.1.8-stable\include\event2\visibility.h" />
-    <ClInclude Include="..\libevent-2.1.8-stable\include\evhttp.h" />
-    <ClInclude Include="..\libevent-2.1.8-stable\include\evrpc.h" />
-    <ClInclude Include="..\libevent-2.1.8-stable\include\evutil.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\libevent-2.1.8-stable\buffer.c" />
-    <ClCompile Include="..\libevent-2.1.8-stable\bufferevent.c" />
-    <ClCompile Include="..\libevent-2.1.8-stable\bufferevent_async.c" />
-    <ClCompile Include="..\libevent-2.1.8-stable\bufferevent_filter.c" />
-    <ClCompile Include="..\libevent-2.1.8-stable\bufferevent_pair.c" />
-    <ClCompile Include="..\libevent-2.1.8-stable\bufferevent_ratelim.c" />
-    <ClCompile Include="..\libevent-2.1.8-stable\bufferevent_sock.c" />
-    <ClCompile Include="..\libevent-2.1.8-stable\buffer_iocp.c" />
-    <ClCompile Include="..\libevent-2.1.8-stable\evdns.c" />
-    <ClCompile Include="..\libevent-2.1.8-stable\event.c" />
-    <ClCompile Include="..\libevent-2.1.8-stable\event_iocp.c" />
-    <ClCompile Include="..\libevent-2.1.8-stable\event_tagging.c" />
-    <ClCompile Include="..\libevent-2.1.8-stable\evmap.c" />
-    <ClCompile Include="..\libevent-2.1.8-stable\evrpc.c" />
-    <ClCompile Include="..\libevent-2.1.8-stable\evthread.c" />
-    <ClCompile Include="..\libevent-2.1.8-stable\evthread_win32.c" />
-    <ClCompile Include="..\libevent-2.1.8-stable\evutil.c" />
-    <ClCompile Include="..\libevent-2.1.8-stable\evutil_rand.c" />
-    <ClCompile Include="..\libevent-2.1.8-stable\evutil_time.c" />
-    <ClCompile Include="..\libevent-2.1.8-stable\http.c" />
-    <ClCompile Include="..\libevent-2.1.8-stable\listener.c" />
-    <ClCompile Include="..\libevent-2.1.8-stable\log.c" />
-    <ClCompile Include="..\libevent-2.1.8-stable\signal.c" />
-    <ClCompile Include="..\libevent-2.1.8-stable\strlcpy.c" />
-    <ClCompile Include="..\libevent-2.1.8-stable\win32select.c" />
+    <ClCompile Include="..\libevent-2.1.8-stable\bufferevent_openssl.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
